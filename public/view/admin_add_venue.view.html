@@ -1,0 +1,88 @@
+<main ng-controller="AdminCtrl">
+    <!-- HOME -->
+    <div class="navbar-fixed"">
+    <nav class="nav-wrapper" id="admin-navbar" role="navigation" >
+      <div class="container" id="admin-header">
+        <a class="brand-logo"><img src="assets/images/icon.png" class="acsslogo"></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Home" id="home" href="/#/admin" class="current"><i class="material-icons">store</i></a></li>         
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Venues" id="venues" href="/#/admin_venues"><i class="material-icons">room</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Users" id="users" href="/#/admin_users"><i class="material-icons">perm_identity</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Settings" id="settings" ng-init="sign_out()" ng-click="sign_out_clicked()"><i class="material-icons">toc</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="row" id="admin-body" ng-init="get_logged()">
+    <div class="container" id="admin-events"> 
+      
+      <div class="col s12 m4 l3">
+        <div class="card white" style="margin-top: 30px; margin-left: 15px; margin-right: 10px;">
+          <div class="container">
+            <div class="card-content black-text center-align">
+              <span class="card-title"><img class="circle resposive-img" src="assets/images/icon.png" style="width:150px;height: 150px; display: block; margin: auto;"></span>
+            </div>
+              <div class="center-align" ng-model="logged_user" >
+                <p><h5>{{logged_user.fname + ' ' + logged_user.mname + ' ' + logged_user.lname}}</h5></p>
+                <p>{{logged_user.occ}}</p>
+                <p>{{logged_user.eadd}}</p>
+                <p>{{logged_user.contno}}</p>
+              </div>
+            <div class="card-action center-align">
+              <a href="#"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m8 l9" id="Venues" ng-init="add_venue()">
+        <div class="col s11" >
+          <div class="col s12">
+            <div id="rows" class="row">
+              <div class="col s12">
+                <div class="card" style="margin-top: 30px; margin-left: 10px;">
+                  <div class="card-content black-text">
+                    <span class="card-title">Input information</span>
+                    <div class="row">
+                      <form class="col s12">
+                        <div class="row">
+                          <div class="input-field col s12">
+                              <input  ng-model="vname" type="text" class="validate">
+                              <label for="ename">Venue Name</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input ng-model="vcapacity" type="text" class="validate">
+                            <label for="vcapacity">Capacity</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input ng-model="vprice" type="text">
+                            <label for="vprice">Price</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input ng-model="vaddress" type="text" class="validate">
+                            <label for="vaddress">Address</label>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="card-action center">
+                      <a id="editbtn" class="waves-effect waves-light btn blue" ng-click="add_venue_clicked()">Add Venue</a>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>

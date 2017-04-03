@@ -1,0 +1,52 @@
+<main id="sign-in-body" ng-controller="UserCtrl" ng-init="sign_in()">
+  <!-- HEADER -->
+  <div>
+      <nav>
+      <div id="sign-in-navbar" class="nav-wrapper">
+          <a class="brand-logo center"><img src="assets/images/icon.png" class="acsslogo"></a>
+      </div>
+      </nav>
+  </div>
+  <div class="container">
+      <div class="row center-align">
+        <h3> One app. All events. </h3>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <div id="sign-in-card" class="card-panel">
+            <img id="icon" src="assets/images/icon.png" align="middle">
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email" type="text" class="validate" ng-model='email'>
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" ng-model='password'>
+                    <label for="password">Password</label>
+                  </div>
+                </div>
+                <button class="waves-effect waves-light btn col s12 blue" ng-click='clicked()'>Sign-in</button>
+                <!-- Dropdown Trigger -->
+                <!-- <a id="dropdown" class='dropdown-button btn col s3' href='#' data-activates='dropdown1'>User</a> -->
+
+                <!-- Dropdown Structure -->
+          <!--  <ul id='dropdown1' class='dropdown-content'>
+                  <li><a href="#!">Admin</a></li>
+                  <li><a href="#!">User</a></li>
+                </ul> -->       
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="rows" class="center-align">
+            <a href="http://localhost:7000/#/create_account"> Create Account </a>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>

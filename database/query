@@ -1,0 +1,1 @@
+select e.eventno, ename, edate, etime, eduration, epurpose, eattendees, vname from event e, venue v, eventvenue ev where ev.eventno=e.eventno && ev.venue_no = v.venue_no;

@@ -1,0 +1,153 @@
+<main ng-controller="AdminCtrl" ng-init="get_users()">
+    <!-- HOME -->
+    <div class="navbar-fixed">
+    <nav class="nav-wrapper" id="admin-navbar" role="navigation" >
+      <div class="container" id="admin-header">
+        <a class="brand-logo"><img src="assets/images/icon.png" class="acsslogo"></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Home" id="home" href="/#/admin" class="current"><i class="material-icons">store</i></a></li>         
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Venues" id="venues" href="/#/admin_venues"><i class="material-icons">room</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Users" id="users" href="/#/admin_users"><i class="material-icons">perm_identity</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Settings" id="settings" href="#"><i class="material-icons">toc</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+
+  <div class="row" id="admin-body" ng-init="get_logged()">
+    <div class="container" id="admin-users"> 
+    
+    <div class="col s12 m4 l3">
+        <div class="card white" style="margin-top: 30px; margin-left: 15px; margin-right: 10px;">
+          <div class="container">
+            <div class="card-content black-text center-align">
+              <span class="card-title"><img class="circle resposive-img" src="assets/images/icon.png" style="width:150px;height: 150px; display: block; margin: auto;"></span>
+            </div>
+              <div class="center-align" ng-model="logged_user" >
+                <p><h5>{{logged_user.fname + ' ' + logged_user.mname + ' ' + logged_user.lname}}</h5></p>
+                <p>{{logged_user.occ}}</p>
+                <p>{{logged_user.eadd}}</p>
+                <p>{{logged_user.contno}}</p>
+              </div>
+            <div class="card-action center-align">
+              <a data-target="modal1" ng-click="edit_self(logged_user)">Edit Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="col s12 m8 l8">
+          <div ng-repeat = "user in users"  class="card row s12 m8" style="margin-top: 30px; margin-left: 10px; margin-right: 10px; margin-bottom: 20px">
+                <ul class='collection' id="collection">
+                  <li class='collection-header center-align white' style="margin-top: 25px;"><h5>{{user.fname + ' ' + user.mname + ' ' + user.lname | uppercase}}</h5></li>
+                  <li class = 'collection-item white'> 
+                      <ul class='collection'>
+                          <li class='collection-item grey lighten-3'>User No: {{user.acct_id}}</li>
+                          <li class='collection-item grey lighten-3'>Username: {{user.username}}</li>
+                          <li class='collection-item grey lighten-3'>Password: {{user.pass}}</li>
+                          <li class='collection-item grey lighten-3'>Birthday: {{user.bday | date}}</li>
+                          <li class='collection-item grey lighten-3'>Occupation: {{user.occ}}</li>
+                          <li class='collection-item grey lighten-3'>Contact No: {{user.contno}}</li>
+                      </ul>
+                  </li>
+                  <div class="col s12 m6 l6">
+                      <a class="waves-effect waves-light btn blue col s12" data-target="modal1" ng-click="edit_user(user)">Edit User</a>
+                    </div>
+                    <div class="col s12 m6 l6">
+                      <a class="waves-effect waves-light btn blue col s12" ng-click="delete_user(user)">Delete User</a>
+                    </div>
+                </ul>
+          </div>
+    </div>
+    </div>
+  </div>
+
+       <!-- Modal Structure -->
+      <div id="modal1" class="modal" ng-model="toedit">
+        <div class="modal-content">
+          <div class="col s11" >
+            <div class="col s12 m9 l9">
+            <div id="rows" class="row">
+              <div class="col s12">
+                <div class="card" style="margin-top: 30px; margin-left: 10px;">
+                    <div id="create-account-card" class="card">
+                        <div class="card-content black-text">
+                          <span class="card-title">Input information</span>
+                            <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s4">
+                                    <input  ng-model="fname" type="text" class="validate">
+                                    <label for="first_name">First Name</label>
+                                </div>
+                                <div class="input-field col s4">
+                                  <input ng-model="mname" type="text" class="validate">
+                                  <label for="middle_name">Middle Name</label>
+                                </div>
+                                <div class="input-field col s4">
+                                  <input ng-model="lname" type="text" class="validate">
+                                  <label for="last_name">Last Name</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s4">
+                                  <input ng-model="bday" type="text" class="validate">
+                                  <label for="bday">Birthday</label>
+                                </div>
+                                <div class="input-field col s4">
+                                  <input ng-model="occ" type="text">
+                                  <label for="occupation">Occupation</label>
+                                </div>
+                                <div class="input-field col s4">
+                                  <input ng-model="type" type="text">
+                                  <label for="Typee">User Type</label>
+                                </div>
+                              </div>
+                                <div class="row">
+                                  <div class="input-field col s6">
+                                      <input ng-model="email" type="text" class="validate">
+                                      <label for="email">Email</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input ng-model="contactnum" type="text" length="10">
+                                        <label for="contact_num">Contact Number (+63)</label>
+                                    </div>
+                                </div>
+                              <div class="row">
+                                <div class="input-field col s4">
+                                  <input ng-model="username" type="text" class="validate" length="15">
+                                  <label for="username">Username</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input ng-model="password" type="password" class="validate" length="15">
+                                  <label for="password">Password</label>
+                                </div>
+                                <div class="input-field col s4">
+                                  <input ng-model="repassword" type="password" class="validate" length="15">
+                                  <label for="password">Re-type password</label>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="card-action center">
+                            <a class="waves-effect waves-light btn blue" ng-click="edit_user_clicked()">Edit User</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>         
+</main>
+<script type="text/javascript">
+  $(document).ready(function () {
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      // $('.modal-trigger').leanModal();
+      $('.modal').modal();
+  });
+</script>

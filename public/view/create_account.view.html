@@ -1,0 +1,89 @@
+<main id="create-account-body" ng-controller="UserCtrl" ng-init="create_account()">
+	<!-- HEADER -->
+  <div>
+    <nav>
+    <div id="create-account-navbar" class="nav-wrapper">
+      <a class="brand-logo center"><img src="assets/images/icon.png" class="acsslogo"></a>
+    </div>
+    </nav>
+  </div>
+	<div class="container">
+		<div class="row center-align">
+      <h3> One app. All events. </h3>
+    </div>
+		<div id="rows" class="row">
+	    <div class="col s12">
+	      <div id="create-account-card" class="card">
+	        <div class="card-content black-text">
+	          <span class="card-title">Input information</span>
+						<div class="row">
+			    	<form class="col s12">
+			      		<div class="row">
+				        	<div class="input-field col s4">
+				          		<input  ng-model="fname" type="text" class="validate">
+				          		<label for="first_name">First Name</label>
+				        	</div>
+					        <div class="input-field col s4">
+					        	<input ng-model="mname" type="text" class="validate">
+					        	<label for="middle_name">Middle Name</label>
+					        </div>
+					        <div class="input-field col s4">
+					        	<input ng-model="lname" type="text" class="validate">
+					        	<label for="last_name">Last Name</label>
+					        </div>
+			      		</div>
+						<div class="row">
+							<div class="input-field col s4">
+							  <input ng-model="bday" type="text" class="validate">
+							  <label for="bday">Birthday</label>
+							</div>
+							<div class="input-field col s4">
+								<input ng-model="occ" type="text">
+								<label for="occupation">Occupation</label>
+							</div>
+							<div class="input-field col s4">
+								<input ng-model="type" type="text">
+								<label for="Typee">User Type</label>
+							</div>
+						</div>
+					    <div class="row">
+					    	<div class="input-field col s6">
+					        	<input ng-model="email" type="text" class="validate">
+					        	<label for="email">Email</label>
+					        </div>
+					        <div class="input-field col s6">
+					            <input ng-model="contactnum" type="text" length="10">
+					            <label for="contact_num">Contact Number (+63)</label>
+					        </div>
+					    </div>
+						<div class="row">
+							<div class="input-field col s4">
+								<input ng-model="username" type="text" class="validate" length="15">
+								<label for="username">Username</label>
+							</div>
+							<div class="input-field col s4">
+						  		<input ng-model="password" type="password" class="validate" length="15">
+								<label for="password">Password</label>
+							</div>
+							<div class="input-field col s4">
+						 		<input ng-model="repassword" type="password" class="validate" length="15">
+								<label for="password">Re-type password</label>
+							</div>
+						</div>
+				    	<form action="#">
+					    	<p>
+					    		<input type="checkbox" id="test5" ng-model="checkbox" ng-init="checkbox=false">
+					    		<label for="test5">I agree with terms and conditions.</label>
+					   		</p>
+				  		</form>
+				    </form>
+		  			</div>
+		      </div>
+		        <div class="card-action center" ng-if="checkbox">
+		          <a class="waves-effect waves-light btn blue" ng-click="clicked()">Sign-up</a>
+		        </div>
+		    </div>
+	    </div>
+    </div>
+  </div>      
+</main>

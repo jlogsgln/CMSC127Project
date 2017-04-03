@@ -1,0 +1,89 @@
+<main ng-controller="UserCtrl" ng-init="get_venues()">
+    <!-- HOME -->
+  <div class="navbar-fixed">
+    <nav class="nav-wrapper" id="user-navbar" role="navigation" >
+      <div class="container" id="user-header">
+        <a class="brand-logo"><img src="assets/images/icon.png" class="acsslogo"></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Home" id="home" href="/#/user" class="current"><i class="material-icons">store</i></a></li>         
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Venues" id="venues" href="/#/user_search_event"><i class="material-icons">room</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Users" id="users" href="/#/user"><i class="material-icons">perm_identity</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Settings" id="settings" ng-init="sign_out()" ng-click="sign_out_clicked()"><i class="material-icons">toc</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="row" id="user-body" ng-init="get_logged()">
+    <div class="container" id="user-events"> 
+      
+      <div class="col s12 m4 l3">
+        <div class="card white" style="margin-top: 30px; margin-left: 15px; margin-right: 10px;">
+          <div class="container">
+            <div class="card-content black-text center-align">
+              <span class="card-title"><img class="circle resposive-img" src="assets/images/icon.png" style="width:150px;height: 150px; display: block; margin: auto;"></span>
+            </div>
+              <div class="center-align" ng-model="logged_user" >
+                <p><h5>{{logged_user.fname + ' ' + logged_user.mname + ' ' + logged_user.lname}}</h5></p>
+                <p>{{logged_user.occ}}</p>
+                <p>{{logged_user.eadd}}</p>
+                <p>{{logged_user.contno}}</p>
+              </div>
+            <div class="card-action center-align">
+              <a>Edit profile</a>
+            </div>
+            <div class="card-action center-align">
+              <a class="center" href="/#/user_pending_events">Pending Events</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m8 l9">
+        <div class="card row s12 m8" style="margin-top: 30px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px">
+          <div class="card-action left col s6 center-align">
+            <a class="waves-effect waves-light btn blue col s12" ng-click="print()">Get PDF</a>
+          </div>
+          <div class="card-action left col s6 center-align" >
+            <a class="waves-effect waves-light btn blue col s12" href="/#/user_add_event">Add an Event</a>
+          </div>
+          <div class="card-action left col s6 center-align" id="srchEventBtn">
+            <a class="waves-effect waves-light btn blue col s12" ng-click="search_venue_click()">Search a  Venue</a>
+          </div>     
+          <form>
+          <div class="input-field col s6 right" style="margin-bottom:-10px;">
+            <input id="search" type="search" class="grey lighten-3" ng-model="search" ng-init="search_venue()" required>
+          <!-- <label for="search">search</label> -->
+            <i class="material-icons">close</i>
+          </div>
+        </form>           
+        </div>
+      </div>
+
+      <div class="col s12 m8 l9" id="Venues">
+        <div ng-repeat = "venue in venues"   class="card row s12 m8" style="margin-top: 30px; margin-left: 10px; margin-right: 15px; margin-bottom: 20px">
+          <ul class='collection' id="collection">
+            <li class='collection-header center-align white' style="margin-top: 25px;"><h5>{{venue.vname | uppercase}}</h5></li>
+            <li class = 'collection-item white'> 
+                <ul class='collection'>
+                    <li class='collection-item grey lighten-3'>Venue No: {{venue.venue_no}}</li>
+                    <li class='collection-item grey lighten-3'>Address: {{venue.vaddress}}</li>
+                    <li class='collection-item grey lighten-3'>Address: {{venue.vcapacity}}</li>
+                    <li class='collection-item grey lighten-3'>Capacity: {{venue.vcapacity}}</li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</main>
+<script>
+
+  $(document).ready(function () {
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      // $('.modal-trigger').leanModal();
+      $('.modal').modal();
+      $('#editbtn').modal('close');
+  });
+</script>

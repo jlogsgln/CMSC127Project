@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> One app. All events. </title>
+
+    <!--Import materialize.css-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/index.css"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+
+</head>
+<body class="white" ng-app="app">
+    <!-- VIEWS -->
+    <div ng-view></div>
+    
+    <!-- FOOTER -->
+    <footer class="page-footer fixed grey lighten-1" id="page-footer">
+        <div class="container fixed grey lighten-1"">
+            <div class="row center">
+                <a href="http://www.facebook.com"><img src="assets/images/facebook.png" class="social-media"></a>
+                <a href="http://www.twitter.com"><img src="assets/images/twitter.png" class="social-media"></a>
+                <a href="http://www.google.com"><img src="assets/images/gplus.png" class="social-media"></a>
+            </div>
+            <div class="row center">
+                <p class="white-text footer-links">|</p>
+                <a class="white-text footer-links" href="#">ABOUT</a>
+                <p class="white-text footer-links">|</p>
+                <a class="white-text footer-links" href="#">CONTACT</a>
+                <p class="white-text footer-links">|</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center">
+                © 2016 D'GAM | All rights reserved
+            </div>
+        </div>
+    </footer>
+       
+     <!--Import jQuery before materialize.js-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <!-- <script>
+
+        // Include app dependency on ngMaterial
+
+        angular.module( 'YourApp', [ 'ngMaterial' ] )
+            .controller("YourController", YourController );
+
+    </script> -->
+
+
+    <script src="app.js"></script>
+    <script src="assets/js/init.js"></script>
+    <script src="controller/user.controller.js"></script>
+    <script src="service/user.service.js"></script>
+    <script src="controller/admin.controller.js"></script>
+    <script src="service/admin.service.js"></script>
+
+   </body>
+</html>

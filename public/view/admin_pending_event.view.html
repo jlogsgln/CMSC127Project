@@ -1,0 +1,116 @@
+<main ng-controller="AdminCtrl" ng-init="get_pending_events()">
+    <!-- HOME -->
+  <div class="navbar-fixed"">
+    <nav class="nav-wrapper" id="admin-navbar" role="navigation" >
+      <div class="container" id="admin-header">
+        <a class="brand-logo"><img src="assets/images/icon.png" class="acsslogo"></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Home" id="home" href="/#/admin" class="current"><i class="material-icons">store</i></a></li>         
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Venues" id="venues" href="/#/admin_venues"><i class="material-icons">room</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Users" id="users" href="/#/admin_users"><i class="material-icons">perm_identity</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Settings" id="settings" href="#"><i class="material-icons">toc</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="row" id="user-body" ng-init="get_logged()">
+    <div class="container" id="user-events"> 
+      
+      <div class="col s12 m4 l3">
+        <div class="card white" style="margin-top: 30px; margin-left: 15px; margin-right: 10px;">
+          <div class="container">
+            <div class="card-content black-text center-align">
+              <span class="card-title"><img class="circle resposive-img" src="assets/images/icon.png" style="width:150px;height: 150px; display: block; margin: auto;"></span>
+            </div>
+              <div class="center-align" ng-model="logged_user" >
+                <p><h5>{{logged_user.fname + ' ' + logged_user.mname + ' ' + logged_user.lname}}</h5></p>
+                <p>{{logged_user.occ}}</p>
+                <p>{{logged_user.eadd}}</p>
+                <p>{{logged_user.contno}}</p>
+              </div>
+            <div class="card-action center-align">
+              <a class="center" href="/#/admin_pending_event">Events for Approval</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m8 l9" id="Events">
+        <div ng-repeat = "event in events" class="card row s12 m8 grey lighten-2" style="margin-top: 30px; margin-left: 10px; margin-right: 15px; margin-bottom: 30px">
+          <div class="card grey lighten-2">
+            <div class="card-content black-text">
+              <span class="card-title"><h4>{{event.ename | uppercase}}</h4></span>
+                <table>
+                <thead>
+                    <th>Event no</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Duration</th>
+                    <th>Attendees</th>
+                    <th>Venue</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{event.eventno}}</td>
+                    <td>{{event.edate | date}}</td>
+                    <td>{{event.etime}}</td>
+                    <td>{{event.eduration}}</td>
+                    <td>{{event.eattendees}}</td>
+                    <td>{{event.vname}}</td>
+                  </tr>
+                  <tr>
+                    <th>Purpose: </th>
+                    <td>{{event.epurpose}}</td>
+                  </tr>
+                </tbody>
+              </table>
+               <form action="#">
+                <div class="col s6">
+                  <p>
+                    <input type="checkbox" id="test5" ng-model="checkbox" ng-init="checkbox=false"/>
+                    <label for="test5">Show venue info</label>
+                  </p>
+                </div>
+                <div class="col s6">
+                  <div class="col s6">
+                    <a class="waves-effect waves-light btn blue col s12" data-position="top" data-delay="50" data-tooltip="Edit" ng-click="approve_event(event)">
+                      <i class="material-icons">edit</i> Approve
+                    </a>
+                  </div>
+                  <div class="col s6">
+                    <a class="waves-effect waves-light btn blue col s12" data-position="top" data-delay="50" data-tooltip="Delete" ng-click="delete_pending_event(event)">
+                      <i class="material-icons">delete</i> Delete
+                    </a>
+                  </div>
+                </div>
+              </form>
+              </div>
+                <div class="card-content black-text" ng-if="checkbox">
+                  <span class="card-title"><h5>Venue: {{event.vname | uppercase}}</h5></span>
+                  <table class="highlight">
+                    <thead>
+                      <tr>
+                        <th>Venue no</th>
+                        <th>Location</th>
+                        <th>Capacity</th>
+                        <th>Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{event.venue_no}}</td>
+                        <td>{{event.vaddress}}</td>
+                        <td>{{event.vcapacity}}</td>
+                        <td>{{event.vprice}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>

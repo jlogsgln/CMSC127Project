@@ -1,0 +1,190 @@
+/*Navbar*/
+#sign-in-navbar{
+    background-color: #4a148c;
+}
+
+#admin-navbar{
+    background-color: #4a148c;
+}
+
+#user-navbar{
+    background-color: #4a148c;
+}
+
+#create-account-navbar{
+    background-color: #4a148c;   
+}
+
+/*Body*/
+#sign-in-card{
+    /*margin-top: 10%;*/
+    margin-left: 30%;
+    width: 40%;
+    padding: 5%;
+    background-color: #f7f7f7;
+}
+
+#create-account-card{
+    background-color: #f7f7f7;
+}
+
+#admin-body{
+    background-color: #f3e5f5;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#user-body{
+    background-color: #f3e5f5;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#sign-in-body{
+    background-color: #f3e5f5;
+    margin-bottom: -20px;
+}
+
+#create-account-body{
+    background-color: #f3e5f5;
+}
+
+@media only screen and (min-width : 993px) {
+  #admin-events{
+    width: 90%;
+  }
+  #admin-users{
+    width: 90%;
+  }
+  #admin-header{
+    width: 80%;
+  }
+  #user-header{
+    width: 80%;
+  }
+  #user-events{
+    width: 90%;
+  }
+  #user-add-event{
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width : 601px) {
+  #admin-events{
+    width: 100%;
+  }
+  #admin-users{
+    width: 100%;
+  }
+  #admin-header{
+    width: 90%;
+  }
+  #user-header{
+    width: 90%;
+  }
+  #user-events{
+    width: 100%;
+  }
+  #user-add-event{
+    width: 95%;
+  }
+}
+
+#rows{
+    margin-bottom: 10px;
+}
+
+
+#collection{
+    border: 0px;
+}
+
+#icon {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+/*#card {
+    margin-top: 10%;
+    margin-left: 30%;
+    width: 40%;
+    padding: 5%;    
+}*/
+
+#dropdown {
+  margin-left: 5px;
+}
+
+/* CONTENT */
+::selection {
+    color: black;
+    background-color: white;
+}
+
+/* NAV BAR */
+nav {
+    /*background-color: #0277bd;*/
+    height: 63px;
+    line-height: 60px;
+}
+
+/* ACSS LOGO */
+.acsslogo {
+    height: 55px;
+    vertical-align: middle;
+}
+
+/* APP NAME */
+#appname {
+    font-size: 25px;
+}
+
+/* DROPDOWN */
+.dropdown-content {
+    min-width: 120px;
+    max-height: 650px;
+    will-change: width, height;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    color: #0277bd;
+}
+
+/* FOOTER */
+footer.page-footer .footer-copyright {
+    overflow: hidden;
+    height: 45px;
+    line-height: 45px;
+    background-color: #4a148c;
+    /*color: rgba(255, 255, 255, 0.8);*/
+}
+
+#page-footer{
+    margin-top: -10px;
+}
+
+.footer-links {
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+/* SOCIAL MEDIA LINKS */
+.social-media {
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.container {
+    height: 100%;
+}
+
+footer {
+    margin-top: -20px;
+}

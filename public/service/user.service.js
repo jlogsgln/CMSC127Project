@@ -1,4 +1,5 @@
 //I will use camelCase here for functions 
+
 'use strict';
 
 (function(){

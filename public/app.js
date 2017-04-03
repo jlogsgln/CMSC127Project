@@ -55,4 +55,4 @@
 			})
 			.otherwise({'redirectTo': 'sign_in'});
 	}
-})();
+})(); 

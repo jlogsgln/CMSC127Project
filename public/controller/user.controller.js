@@ -49,8 +49,8 @@
 							console.log(res.type);
 							$scope.user = res;
 							console.log($scope.user.type);
-							if(res.type == "admin") $window.location.href = '/#/admin';
-							else $window.location.href = '/#/user';
+							if(res.type == "admin") $window.location.href = '/#!/admin';
+							else $window.location.href = '/#!/user';
 						}
 						else{
 							alert(res.message);
@@ -67,7 +67,7 @@
 					.signOut()
 					.then(function(res){
 						console.log(res);
-						$window.location.href = '/#/sign_in';
+						$window.location.href = '/#!/sign_in';
 					}, function(err){
 						alert(err.statusText);
 					})
@@ -96,11 +96,11 @@
 						.then(function(res) {
 	                        console.log(res);
 	                    	alert(res.message);
-	                    	$window.location.href ='/#/sign_in';
+	                    	$window.location.href ='/#!/sign_in';
 	                    }, function(err) {
 	                        console.log(err);
 	                        alert("Account already existing!");
-	                        $window.location.href ='/#/create_account';
+	                        $window.location.href ='/#!/create_account';
 	                    })
 	            }else{
 	            	alert("Password mismatch! Please try again.");
@@ -137,14 +137,14 @@
 					.then(function(res) {
 	                    if(res.message == 'Account created successfully!'){
 	                    	alert(res.message);
-		 	               	$window.location.href ='http://localhost:7000/#/user';	
+		 	               	$window.location.href ='http://localhost:7000/#!/user';	
 	                    }else{
 	                    	alert(res.message);
 	                    }       
 	                }, function(err) {
 	                    console.log(err);
 	                    alert("Date and time already occupied! Please try another one.")
-	                   	$window.location.href ='http://localhost:7000/#/user_add_event';
+	                   	$window.location.href ='http://localhost:7000/#!/user_add_event';
 	                })
 		       
 				}

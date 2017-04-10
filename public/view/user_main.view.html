@@ -5,9 +5,9 @@
       <div class="container" id="user-header">
         <a class="brand-logo"><img src="assets/images/icon.png" class="acsslogo"></a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Home" id="home" href="/#/user" class="current"><i class="material-icons">store</i></a></li>         
-          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Venues" id="venues" href="/#/user_search_venue"><i class="material-icons">room</i></a></li>
-          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Users" id="users" href="/#/user"><i class="material-icons">perm_identity</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Home" id="home" href="/#!/user" class="current"><i class="material-icons">store</i></a></li>         
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Venues" id="venues" href="/#!/user_search_venue"><i class="material-icons">room</i></a></li>
+          <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Users" id="users" href="/#!/user"><i class="material-icons">perm_identity</i></a></li>
           <li><a class="header-link white-text s12 tooltipped" data-position="center" data-delay="50" data-tooltip="Settings" id="settings" ng-init="sign_out()" ng-click="sign_out_clicked()"><i class="material-icons">toc</i></a></li>
         </ul>
       </div>
@@ -34,7 +34,7 @@
               <a class="center" ng-click="edit_self(logged_user)">Edit Profile</a>
             </div>
             <div class="card-action center-align">
-              <a class="center" href="/#/user_pending_events">Pending Events</a>
+              <a class="center" href="/#!/user_pending_events">Pending Events</a>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
             <a class="waves-effect waves-light btn blue col s12" ng-click="print()">Get PDF</a>
           </div>
           <div class="card-action left col s6 center-align" >
-            <a class="waves-effect waves-light btn blue col s12" href="/#/user_add_event">Add an Event</a>
+            <a class="waves-effect waves-light btn blue col s12" href="/#!/user_add_event">Add an Event</a>
           </div>
           <div class="card-action left col s6 center-align" id="srchEventBtn">
             <a class="waves-effect waves-light btn blue col s12" ng-click="search_click()">Search an Event</a>

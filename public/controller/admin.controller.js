@@ -39,7 +39,7 @@
                     .signOut()
                     .then(function(res){
                         console.log(res);
-                        $window.location.href = '/#/sign_in';
+                        $window.location.href = '/#!/sign_in';
                     }, function(err){
                         alert(err.statusText);
                     })
@@ -68,11 +68,11 @@
                         .then(function(res) {
                             console.log(res);
                             alert(res.message);
-                            $window.location.href ='/#/admin';
+                            $window.location.href ='/#!/admin';
                         }, function(err) {
                             console.log(err);
                             alert("Account already existing!");
-                            $window.location.href ='/#/admin';
+                            $window.location.href ='/#!/admin';
                         })
                 }else{
                     alert("Password mismatch! Please try again.");
@@ -241,7 +241,7 @@
                     .addVenue(data)
                     .then(function(res){
                         alert(res.message);
-                        $window.location.href ='/#/admin_venues';
+                        $window.location.href ='/#!/admin_venues';
                     }, function(err){
                         alert(err.statusText);
                     })
